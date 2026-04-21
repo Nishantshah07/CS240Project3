@@ -9,4 +9,4 @@ add_executable(CS240Project3
         initialtest.cc
         MySet.h
         setinterface.h
-        setinterface.cc)
+        MySet.cc)
