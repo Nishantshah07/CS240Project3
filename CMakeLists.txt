@@ -8,4 +8,5 @@ include_directories(.)
 add_executable(CS240Project3
         initialtest.cc
         MySet.h
-        setinterface.h)
+        setinterface.h
+        setinterface.cc)
