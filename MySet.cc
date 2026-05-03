@@ -167,6 +167,37 @@ void MySet<T>::Difference(const SetInterface<T>& set2) {
 }
 
 template <class T>
+MySet<T> MySet<T>::operator+(const SetInterface<T>& right) const {
+  MySet<T> result(*this);
+  result.Union(right);
+  return result;
+}
+
+template <class T>
+MySet<T> MySet<T>::operator*(const SetInterface<T>& right) const {
+  MySet<T> result(*this);
+  result.Intersection(right);
+  return result;
+}
+
+template <class T>
+MySet<T> MySet<T>::operator-(const SetInterface<T>& right) const {
+  MySet<T> result(*this);
+  result.Difference(right);
+  return result;
+}
+
+template <class T>
+bool MySet<T>::operator==(const SetInterface<T>& right) const {
+  return IsSubsetOf(right) && IsSupersetOf(right);
+}
+
+template <class T>
+bool MySet<T>::operator!=(const SetInterface<T>& right) const {
+  return !(*this == right);
+}
+
+template <class T>
 void MySet<T>::Resize() {
   int new_capacity = capacity_;
 

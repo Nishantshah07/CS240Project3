@@ -30,6 +30,12 @@ class MySet : public SetInterface<T> {
   void Union(const SetInterface<T>& set2) override;
   void Difference(const SetInterface<T>& set2) override;
 
+  MySet<T> operator+(const SetInterface<T>& right) const;
+  MySet<T> operator*(const SetInterface<T>& right) const;
+  MySet<T> operator-(const SetInterface<T>& right) const;
+  bool operator==(const SetInterface<T>& right) const;
+  bool operator!=(const SetInterface<T>& right) const;
+
  private:
   T* elements_;
   int size_;
