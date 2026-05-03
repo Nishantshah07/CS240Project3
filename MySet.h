@@ -2,8 +2,7 @@
 #define _MYSET_H_
 
 #include <iostream>
-#include <stdexcept>
-#include "SetInterface.h"
+#include "setinterface.h"
 
 namespace csce240h_project3 {
 
@@ -42,4 +41,5 @@ class MySet : public SetInterface<T> {
 
 }  // namespace csce240h_project3
 
+#include "MySet.cc"
 #endif  // _MYSET_H_
