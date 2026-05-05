@@ -113,7 +113,7 @@ T MySet<T>::GetElement(int index) const {
 }
 
 template <class T>
-bool MySet<T>::IsSubsetOf(const SetInterface<T>& superset) const {
+bool MySet<T>::IsSubsetOf(const SetInterface<T>& superset) {
   for (int i = 0; i < size_; ++i) {
     if (!superset.IsElementOf(elements_[i]))
       return false;
@@ -123,7 +123,7 @@ bool MySet<T>::IsSubsetOf(const SetInterface<T>& superset) const {
 }
 
 template <class T>
-bool MySet<T>::IsSupersetOf(const SetInterface<T>& subset) const {
+bool MySet<T>::IsSupersetOf(const SetInterface<T>& subset) {
   int subset_size = subset.Cardinality();
 
   for (int i = 0; i < subset_size; ++i) {
@@ -189,7 +189,15 @@ MySet<T> MySet<T>::operator-(const SetInterface<T>& right) const {
 
 template <class T>
 bool MySet<T>::operator==(const SetInterface<T>& right) const {
-  return IsSubsetOf(right) && IsSupersetOf(right);
+  if (size_ != right.Cardinality())
+    return false;
+
+  for (int i = 0; i < size_; ++i) {
+    if (!right.IsElementOf(elements_[i]))
+      return false;
+  }
+
+  return true;
 }
 
 template <class T>
