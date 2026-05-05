@@ -1,7 +1,7 @@
 // Copyright 2026 Nishantshah07 bguliano
 
 #include <iostream>
-#include "MySet.h"
+#include "myset.h"
 
 using csce240h_project3::MySet;
 using std::cin;

@@ -49,5 +49,5 @@ bool IsSupersetOf(const SetInterface<T>& subset) override;
 
 }  // namespace csce240h_project3
 
-#include "MySet.cc"
+#include "myset.cc"
 #endif  // MYSET_H_

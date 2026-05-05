@@ -17,8 +17,15 @@ demo : demo.o
 	$(link) $^ -o $@
 	./$@
 
-demo.o : demo.cc MySet.h MySet.cc setinterface.h
+demo.o : demo.cc myset.h myset.cc setinterface.h
+	$(compile) $<
+
+initialtest : initialtest.o
+	$(link) $^ -o $@
+	./$@
+
+initialtest.o : initialtest.cc myset.h myset.cc setinterface.h
 	$(compile) $<
 
 clean :
-	rm -f *.o demo
+	rm -f *.o demo initialtest

@@ -1,7 +1,7 @@
 // Copyright 2026 Nishantshah07 bguliano
 
 #include <iostream>
-#include "MySet.h"
+#include "myset.h"
 
 namespace csce240h_project3 {
 
