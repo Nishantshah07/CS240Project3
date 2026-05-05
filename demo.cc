@@ -1,7 +1,9 @@
+// Copyright 2026 Nishantshah07 bguliano
+
 #include <iostream>
 #include "MySet.h"
 
-using namespace csce240h_project3;
+using csce240h_project3::MySet;
 
 // Converts one character to lowercase without using extra libraries
 char ToLowerChar(char c) {

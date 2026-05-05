@@ -1,8 +1,9 @@
-// Copyright 2026 bguliano, Nishantshah07
+// Copyright 2026 Nishantshah07 bguliano
 
 #ifndef _MYSET_CC_
 #define _MYSET_CC_
 
+#include <iostream>
 #include "MySet.h"
 
 namespace csce240h_project3 {

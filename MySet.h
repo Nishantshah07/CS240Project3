@@ -1,5 +1,7 @@
-#ifndef _MYSET_H_
-#define _MYSET_H_
+// Copyright 2026 Nishantshah07 bguliano
+
+#ifndef MYSET_H_
+#define MYSET_H_
 
 #include <iostream>
 #include "setinterface.h"
@@ -48,4 +50,4 @@ bool IsSupersetOf(const SetInterface<T>& subset) override;
 }  // namespace csce240h_project3
 
 #include "MySet.cc"
-#endif  // _MYSET_H_
+#endif  // MYSET_H_
