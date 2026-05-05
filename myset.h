@@ -26,7 +26,7 @@ class MySet : public SetInterface<T> {
   T GetElement(int index) const override;
 
   bool IsSubsetOf(const SetInterface<T>& superset) override;
-bool IsSupersetOf(const SetInterface<T>& subset) override;
+  bool IsSupersetOf(const SetInterface<T>& subset) override;
 
   void Intersection(const SetInterface<T>& set2) override;
   void Union(const SetInterface<T>& set2) override;
