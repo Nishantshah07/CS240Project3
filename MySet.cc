@@ -1,8 +1,5 @@
 // Copyright 2026 Nishantshah07 bguliano
 
-#ifndef _MYSET_CC_
-#define _MYSET_CC_
-
 #include <iostream>
 #include "MySet.h"
 
@@ -245,5 +242,3 @@ int MySet<T>::IndexOf(const T& value) const {
 }
 
 }  // namespace csce240h_project3
-
-#endif
