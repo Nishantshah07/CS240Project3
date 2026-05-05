@@ -1,29 +1,24 @@
-# Compiler
-CXX = g++
+# Makefile is the text file the make utility will look for
 
-# Compiler flags
-CXXFLAGS = -std=c++17 -Wall -Wextra -pedantic
+# demo is the target
+# demo.o is the prerequisite
+# if demo is out of date (doesn't exist or has been updated)
 
-# Program name
-TARGET = demo
+# $@ = the target
+# $< = the first prerequisite
+# $^ = all prerequisites
 
-# Source file with main()
-SRC = demo.cc
+compiler = g++
+flags = -Wall -std=c++17
+link = $(compiler) $(flags)
+compile = $(compiler) $(flags) -c
 
-# Header and template implementation files
-HEADERS = MySet.h setinterface.h MySet.cc
+demo : demo.o
+	$(link) $^ -o $@
+	./$@
 
-# Default rule
-all: $(TARGET)
+demo.o : demo.cc MySet.h MySet.cc setinterface.h
+	$(compile) $<
 
-# Build executable
-$(TARGET): $(SRC) $(HEADERS)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
-
-# Run the program
-run: $(TARGET)
-	./$(TARGET)
-
-# Remove compiled files
-clean:
-	rm -f $(TARGET)
+clean :
+	rm -f *.o demo
