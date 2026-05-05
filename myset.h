@@ -32,6 +32,7 @@ class MySet : public SetInterface<T> {
   void Union(const SetInterface<T>& set2) override;
   void Difference(const SetInterface<T>& set2) override;
 
+  // additional features
   MySet<T> operator+(const SetInterface<T>& right) const;
   MySet<T> operator*(const SetInterface<T>& right) const;
   MySet<T> operator-(const SetInterface<T>& right) const;
